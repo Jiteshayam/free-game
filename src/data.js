@@ -2,7 +2,6 @@ export const filterDataByCategory = [
   {
     id: "0",
     title: "All",
-    image:"https://staticg.sportskeeda.com/editor/2020/07/a1867-15940230079329-800.jpg"
   },
   {
     id: "1",
@@ -66,7 +65,7 @@ export const filterDataByCategory = [
   },
 ];
 
-export const apiUrl = "https://codehelp-apis.vercel.app/api/get-top-courses";
+// export const apiUrl = "https://codehelp-apis.vercel.app/api/get-top-courses";
 
 
 export const listurl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';

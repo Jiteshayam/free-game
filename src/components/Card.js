@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFillBookmarkFill, BsBookmark } from "react-icons/bs";
+import { BsFillBookmarkCheckFill, BsBookmark } from "react-icons/bs";
 import { AiFillWindows } from "react-icons/ai";
 import { toast } from "react-toastify";
 
@@ -40,9 +40,13 @@ const Card = (props) => {
         <a href={Game.game_url} target="_blank" rel="noreferrer">
           <img className="gameImage rounded-t-lg" src={Game.thumbnail} alt="" ></img>
         </a>
-        <div className="w-[40px] h-[40px] bg-white rounded-full absolute right-2 -bottom-3 grid place-items-center ">
-          <button onClick={ClickHandler}>
-            <BsBookmark fontSize='1.3rem' />
+        <div onClick={ClickHandler} className="w-[40px] h-[40px] bg-white rounded-full absolute right-2 -bottom-3 grid place-items-center cursor-pointer hover:scale-105 duration-100 transition-scale">
+          <button >
+            {
+              BookmarkedGames.includes(Game.id) ?
+              (<BsFillBookmarkCheckFill fontSize='1.3rem' />):
+              (<BsBookmark fontSize='1.3rem' />)
+            }
             </button>
         </div>
       </div>
@@ -58,7 +62,11 @@ const Card = (props) => {
         <div className="hidden game-detail bg-bgDark2 rounded-b-lg w-[350px] mt-3">
           <p className="black px-4">{Game.developer}</p>
           <p className="block px-4">{Game.release_date}</p>
-          <p className="black px-4">{Game.short_description}</p>
+          <p className="black px-4 text-sm">{
+          Game.short_description.length>100?
+          (Game.short_description.substr(0,100)+("...")):
+          (Game.short_description)
+          }</p>
         </div>
       </div>
 
