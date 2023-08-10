@@ -34,7 +34,7 @@ const Card = (props) => {
   }
 
   return (
-    <div className="w-[350px] h-[280px] bg-bgDark2 text-white relative Game-Thumbnail transition ease-in-out">
+    <div className="w-[350px] h-[280px] bg-bgDark2 text-white relative Game-Thumbnail ">
 
       <div className="relative z-0">
         <a href={Game.game_url} target="_blank" rel="noreferrer">

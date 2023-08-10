@@ -38,8 +38,8 @@ const Cards=(props)=>{
   },[count])
 
   return(
-    <div>
-    <div className="flex flex-wrap justify-center gap-7 mt-6 mb-4 bg-opacity-80 w-90 w-max-[1200px]">
+    <div className="flex justify-center place-content-center flex-wrap flex-col mt-10" >
+    <div className="flex justify-center flex-wrap gap-7 w-4/5">
       {getGames().slice(count-12, count).map((Game)=>{
         return(<Card Game={Game} key={Game.id} BookmarkedGames={BookmarkGames} setBookmark={setBookmark}></Card>)
       })}

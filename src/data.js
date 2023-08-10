@@ -69,6 +69,7 @@ export const filterDataByCategory = [
 
 
 export const listurl = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+export const popularity = 'https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity';
 export const options = {
 	method: 'GET',
 	headers: {
