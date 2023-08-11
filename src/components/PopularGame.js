@@ -1,6 +1,6 @@
 import PopularCard from "./PopularCard"
 import {LiaAngleLeftSolid,LiaAngleRightSolid} from 'react-icons/lia'
-import { useEffect,useRef } from "react"
+import { useEffect,useRef,useState } from "react"
 
 const PopularGame= (props) => {
   let Games = props.Top
@@ -18,8 +18,8 @@ const PopularGame= (props) => {
   
   button.forEach(button =>{
     button.addEventListener("click",()=>{
-      const offset = button.dataset.carouselButton === "next"? 1:-1
       const slides = button.closest("[data-carousel]").querySelector("[data-Slides")
+      const offset = button.dataset.carouselButton === "next"? 1:-1
       
       const activeSlide = slides.querySelector('[data-active]')
       let newIndex = [...slides.children].indexOf(activeSlide)+offset

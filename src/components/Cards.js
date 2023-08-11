@@ -23,19 +23,15 @@ const Cards=(props)=>{
     if (count>12){
       setCount(preCount=>preCount-12)
     }
+    props.Filtercards.current.scrollIntoView({ behavior: "smooth"})
   }
   
   function incHandler(){
     if(Games.length>count){
       setCount(preCount=>preCount+12)
     }
+    props.Filtercards.current.scrollIntoView({ behavior: "smooth"})
   }
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  },[count])
 
   return(
     <div className="flex justify-center place-content-center flex-wrap flex-col mt-10" >

@@ -74,7 +74,7 @@ const App = () => {
 
       <div>
         {
-          loading ? (<Spinner />) :( <Cards Games={FillteredItems} setCount={setCount} Count={count} 
+          loading ? (<Spinner />) :( <Cards Games={FillteredItems} setCount={setCount} Count={count} Filtercards={filtercards}
             ></Cards>)
         }
       </div>

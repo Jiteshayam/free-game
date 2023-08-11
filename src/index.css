@@ -49,7 +49,8 @@ body{
     max-width: 1200px;
     height: fit-content;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
     letter-spacing: 0.2rem;
     display: flex;
     justify-content: space-between;
@@ -59,9 +60,9 @@ form {
     position: relative;
     width: 23rem;
     height: inherit;
-    background: var(--color-brand);
     border-radius: var(--rad);
     align-self: center;
+    margin-top: -10px;
   }
   
  .head input, button {
@@ -74,55 +75,11 @@ form {
   .head input[type=search] {
     outline: 0;
     width: 100%;
-    background: var(--color-light);
     padding: 0 1.6rem;
     border-radius: var(--rad);
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    transition: all var(--dur) var(--bez);
-    transition-property: width, border-radius;
     z-index: 3;
     position: relative;
   }
-  
- /* .head button {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #fff;
-    width: var(--btn-width);
-    padding-left: 4%;
-    align-items: center;
-    font-weight: 700;
-    background: var(--color-brand);
-    border-radius: 0 var(--rad) var(--rad) 0;
-  } */
-  
- /* .head input:not(:-moz-placeholder-shown) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-  }
-  
- .head input:not(:-ms-input-placeholder) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-  }
-  
- .head input:not(:placeholder-shown) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-  }
- .head input:not(:-moz-placeholder-shown) + button {
-    display: block;
-  }
-  input:not(:-ms-input-placeholder) + button {
-    display: block;
-  }
- .head input:not(:placeholder-shown) + button {
-    display: block;
-  } */
   
  .head label {
     position: absolute;
@@ -233,13 +190,22 @@ form {
   cursor: pointer;
   border-radius: 50%;
   padding: 0 .5rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+}
+
+.topgame-wrapper:hover .carousel-btn{
+  opacity: 1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.topgame-wrapper:hover .grid{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .carousel-btn:hover,
 .carousel-btn:focus{
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .carousel-btn:focus{
@@ -264,8 +230,35 @@ form {
     height: 85vh;
   }
 }
+@media screen and (max-width: 600px){
+  .top-games-container{
+    height: 60vh;
+  }
+  .Searchmain{
+    position: relative;
+    height: 50px;
+  }
+  .head{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  form{
+    width: 15rem;
+    height: 20px;
+    margin-top: -10px;
+  }
+
+  .head input{
+    height: 30px;
+  }
+}
+@media screen and (max-width: 650px){
+  .top-games-container{
+    height: 66vh;
+  }
+}
 @media screen and (max-width: 500px){
-  .grid{
-    grid-template-columns: auto;
+  .top-games-container{
+    height: 45vh;
   }
 }
