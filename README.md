@@ -13,6 +13,10 @@ npm start
 ```
 This will start a development server on port 3000. You can then access Free Game at http://localhost:3000.
 
+## ScreenShot
+
+![image](https://github.com/Jiteshayam/free-game/screenshot/s1.png)
+
 ## Here are some additional details about Free Game:
 
     The API used by Free Game is the Freetogame API, which provides a list of free games that can be played online.
