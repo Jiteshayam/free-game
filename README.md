@@ -15,7 +15,7 @@ This will start a development server on port 3000. You can then access Free Game
 
 ## ScreenShot
 
-![image](https://github.com/Jiteshayam/free-game/screenshot/s1.png)
+![image](https://github.com/Jiteshayam/free-game/blob/main/screenshot/s1.png)
 
 ## Here are some additional details about Free Game:
 
