@@ -16,6 +16,8 @@ const App = () => {
   const [url, setUrl] = useState(listurl)
   const [count,setCount] = useState(12)
   const filtercards = useRef()
+  let [genre,setGerne] = useState('All')
+
 
   const fetchData = async (url) => {
     setLoading(true)
@@ -64,12 +66,12 @@ const App = () => {
   return (
     <div className="Wrapper">
 
-      <Header Url={url} SetUrl={setUrl} getGames={getGames} SetFilteredItems={setFilteredItems} Filtercards={filtercards} />
+      <Header Url={url} SetUrl={setUrl} getGames={getGames} SetFilteredItems={setFilteredItems} setGerne={setGerne} Filtercards={filtercards} />
 
       <PopularGame Top={topgames}></PopularGame>
 
       <div ref={filtercards}></div>
-      <Filter  Url={url} SetUrl={setUrl} getGames={getGames} SetFilteredItems={setFilteredItems}
+      <Filter  Url={url} SetUrl={setUrl} genre={genre} setGerne={setGerne} getGames={getGames} SetFilteredItems={setFilteredItems}
        filterDataByCategory={filterDataByCategory} setCount={setCount}/>
 
       <div>

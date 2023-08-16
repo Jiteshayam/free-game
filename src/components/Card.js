@@ -40,7 +40,7 @@ const Card = (props) => {
         <a href={Game.game_url} target="_blank" rel="noreferrer">
           <img className="gameImage rounded-t-lg" src={Game.thumbnail} alt="" ></img>
         </a>
-        <div onClick={ClickHandler} className="w-[40px] h-[40px] bg-white rounded-full absolute right-2 -bottom-3 grid place-items-center cursor-pointer hover:scale-105 duration-100 transition-scale">
+        <div onClick={ClickHandler} className="w-[40px] h-[40px] bg-white rounded-full absolute right-2 -bottom-3 flex justify-center cursor-pointer hover:scale-105 duration-100 transition-scale">
           <button >
             {
               BookmarkedGames.includes(Game.id) ?

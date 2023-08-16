@@ -11,6 +11,7 @@ const Header=(props)=>{
       }}
       );
     props.SetFilteredItems(fillGame)
+    props.setGerne('All')
     props.Filtercards.current.scrollIntoView({ behavior: "smooth"})
   }
 

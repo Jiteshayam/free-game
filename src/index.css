@@ -157,15 +157,6 @@ form {
   height: fit-content;
   gap: 10px;
   position: absolute;
-  opacity: 0;
-  transition: 200ms opacity ease-in-out;
-  transition-delay: 200ms;
-}
-
-.grid[data-active]{
-  opacity: 1;
-  transition-delay: 0ms;
-  z-index: 2;
 }
 
 .topgamecard div a img{

@@ -3,7 +3,8 @@ import React, { useState } from "react";
 const Filter =(props)=>{
   let filterDataByCategory = props.filterDataByCategory
   var fillGame = []
-  let [genre,setGerne] = useState('All')
+  let genre = props.genre
+  let setGerne = props.setGerne
 
   function CategoryHandler(title){
     props.getGames().map(items =>{
