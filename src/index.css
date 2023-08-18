@@ -22,14 +22,13 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+#root{
+  all: unset;
+}
+
 body{
     height: 100vh;
     background-color: #2a2e38;
-}
-
-.Wrapper{
-    width: 100vw;
-    height: 100vh;
 }
 
 .Searchmain{
@@ -42,13 +41,14 @@ body{
   justify-content: center;
   position: fixed;
   z-index: 4;
+  opacity: 0.95;
 }
 
 .head{
-    width: 100%;
-    max-width: 1200px;
-    height: fit-content;
-    padding: 1rem;
+  width: 97%;
+  /* max-width: 1400px; */
+  height: fit-content;
+  padding: 1rem;
     font-size: 2.25rem;
     line-height: 2.5rem;
     letter-spacing: 0.2rem;
@@ -57,18 +57,30 @@ body{
 }
 
 form {
-    position: relative;
-    width: 23rem;
+  position: relative;
+    width: 18rem;
     height: inherit;
     border-radius: var(--rad);
     align-self: center;
     margin-top: -10px;
   }
   
- .head input, button {
-    height: var(--height);
+ .head input,.logg input {
+    background-color: #323946;
+    color: #fff;
+  }
+  
+ .head input:focus {
+    border: 1px solid rgba(255, 255, 255,0.1);
+  }
+ .head input:hover {
+    border: 1px solid rgba(255, 255, 255,0.2);
+  }
+
+ .head input, .head button {
+    height: 2.3rem;
     border: 0;
-    color: var(--color-dark);
+    /* color: var(--color-dark); */
     font-size: 1rem;
   }
   
@@ -135,16 +147,15 @@ form {
 
 .topgame-wrapper{
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   display: flex;
   justify-content: center;
   position: relative;
 }
 
 .top-games-container{
-  margin-top: 10rem;
   width: 90%;
-  max-width: 1100px;
+  max-width: 1300px;
   position: relative;
   height: 50vh;
   display: flex;
@@ -157,6 +168,15 @@ form {
   height: fit-content;
   gap: 10px;
   position: absolute;
+  /* opacity: 0; */
+  transition: 200ms display ease-in-out;
+  transition-delay: 100ms;
+  z-index: 0;
+}
+
+.grid[data-active]{
+  transition-delay: 0ms;
+  z-index: 1;
 }
 
 .topgamecard div a img{
@@ -251,5 +271,140 @@ form {
 @media screen and (max-width: 500px){
   .top-games-container{
     height: 45vh;
+  }
+}
+
+.log button{
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 80px;
+  height: 40px;
+  padding: 10px 0;
+  box-shadow: 0 0 2px rgba(104, 85, 224, 0.2);
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.log button:hover{
+  box-shadow: 0 0 3px rgba(104, 85, 224, 0.3);
+}
+
+.or {
+  display: flex;
+  flex-direction: row;
+  color: #161616;
+}
+.or:before, .or:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.or:before {
+  margin-right: 3px
+}
+.or:after {
+  margin-left: 3px
+}
+
+
+.logg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.logg input{
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid rgba(255, 255, 255,0.1);
+  position: relative;
+}
+
+.logg label{
+  width: 100%;
+}
+.logg label p{
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin: 0.25rem;
+  color: rgba(255, 255, 255,0.8);
+}
+
+sup{
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+
+  
+.logg input:focus {
+  border: 1px solid rgba(255, 255, 255,0.3);
+}
+.logg input:hover {
+  border: 1px solid rgba(255, 255, 255,0.3);
+}
+
+.logTemp{
+  display: flex;
+  justify-content: space-between;
+  row-gap: 0px;
+  width: 83.333%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginimg{
+  position: relative;
+  width: 50%;
+  max-width: 450px;
+}
+
+
+.eyeopenner{
+  position: absolute;
+  right: 0.6rem;
+  top: 2.4rem;
+}
+
+.SignBtn{
+  background-color: #08D9D6;
+  color: rgba(23, 23, 23,0.9);
+  border-radius: 8px;
+  font-size: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 700px){
+  .logTemp{
+    flex-direction: column-reverse;
+  }
+  .form33{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .loginimg{
+    width: 100%;
   }
 }
