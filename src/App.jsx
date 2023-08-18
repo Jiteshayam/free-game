@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { BrowserRouter,Link,Routes,Route } from 'react-router-dom'
 import {Bookmarked, Home,Login,Signup} from './Pages/index'
-import Navbar from './components/Navbar'
+import {Navbar,PrivateRoute} from './components/index'
 import { options, listurl, filterDataByCategory,popularity } from "./constant/index";
 
 
@@ -80,7 +80,12 @@ function App() {
 
           <Route path='/login' element={<Login setIsLogedin={setIsLogedin}/>}/>
           <Route path='/signup' element={<Signup setIsLogedin={setIsLogedin}/>}/>
-          <Route path='/bookmarked' element={<Bookmarked/>}/>
+          <Route path='/bookmarked' element=
+          {
+          <PrivateRoute isLogedin={isLogedin}>
+            <Bookmarked/>
+          </PrivateRoute>
+          }/>
         </Routes>
     </div>
 
